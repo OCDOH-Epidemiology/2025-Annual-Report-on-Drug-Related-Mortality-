@@ -1,0 +1,35 @@
+---
+title: "Data Notes"
+jupyter: python3
+toc: true
+toc-depth: 3
+execute:
+  freeze: false
+---
+
+## Privacy and Suppression
+
+- Any data with fewer than 10 cases will be suppressed to protect individual privacy
+- This protocol prevents the disclosure of potentially identifiable information
+
+## Rate Calculations and Population Estimates
+
+- When applicable, rates are used instead of raw counts to allow for meaningful comparisons across different population sizes, such as between age groups
+- Population rates utilize the 2023 5-Year American Community Survey (ACS) from the US Census Bureau
+- Using the ACS 5-Year dataset provides annual updates while ensuring a smaller margin of error
+- This approach maximizes accuracy and reliability, particularly when analyzing smaller geographic areas
+
+## Inclusion Criteria
+
+- The dataset includes accidental, suicidal, and undetermined manners of death
+- It captures both Primary and Secondary Causes of Death
+- The criteria cover diagnoses of Acute Drug Intoxication, Acute Mixed Drug Intoxication, and Acute Intoxication
+
+## Data Review and Comparisons
+
+- These data are reviewed regularly, and the toxicological findings may be updated at any time
+- Comparing current figures to previous annual reports should be done with caution due to potential changes in metrics
+
+## Appendices
+
+- See Appendix A for a list of drugs included in each drug classification

@@ -1,0 +1,21 @@
+/.quarto/
+**/*.quarto_ipynb
+
+# Local-only Quarto output (not used for GitHub Pages; site is in docs/)
+/index.html
+/index_files/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# macOS / external-drive metadata
+.DS_Store
+._*
+
+# Office lock files
+~$*
+
+# Editor / agent local settings
+.cursor/

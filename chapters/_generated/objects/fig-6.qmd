@@ -1,0 +1,12 @@
+<!-- indicator: fig-6 -->
+
+```{python}
+#| echo: false
+#| warning: false
+#| message: false
+#| label: fig-6
+#| fig-cap: 'Rate of Overdose Deaths by Age Group and Year per 100,000 Population, 2021–2024'
+#| fig-alt: 'Data visualization showing Rate of Overdose Deaths by Age Group and Year per 100,000 Population, 2021–2024.'
+from scripts.cha_registry_renderer import render_figure_object
+render_figure_object(figure_id="fig-6", workbook_path=CHA_WORKBOOK_PATH).show()
+```

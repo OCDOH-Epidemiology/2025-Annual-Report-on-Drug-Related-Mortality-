@@ -1,0 +1,20 @@
+<!-- indicator: tbl-6 -->
+
+```{python}
+#| echo: false
+#| warning: false
+#| message: false
+#| label: tbl-6
+#| tbl-cap: 'Rate of Overdose Deaths by Age Group and Year per 100,000 Population, 2021–2024'
+from scripts.cha_registry_renderer import render_table_object
+render_table_object(object_id="tbl-6", workbook_path=CHA_WORKBOOK_PATH)
+```
+
+::: {.callout-note collapse="true"}
+## Source
+Office of the Medical Examiner, Orange County, New York; and U.S. Census Bureau; American Community Survey, 2023 American Community Survey 5-Year Estimates.
+:::
+
+::: {.callout-note}
+Note: Due to the small number of deaths in children, youth, and young adults, this group has been combined for those under 35.
+:::

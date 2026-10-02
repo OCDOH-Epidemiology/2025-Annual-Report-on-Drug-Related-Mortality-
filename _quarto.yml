@@ -1,0 +1,66 @@
+project:
+  type: book
+  output-dir: docs
+  execute-dir: project
+  resources:
+    - "pdfs/**"
+  # Pre-render hook regenerates table/figure include files from the workbook
+  # (data/raw/workbook.xlsx) into chapters/_generated/objects/ before each render.
+  pre-render:
+    - bash scripts/generate_objects.sh
+  post-render:
+    - node scripts/patch_quarto_search.js
+
+lang: en
+
+book:
+  title: "2025 Annual Report on Drug-Related Mortality"
+  subtitle: "Orange County, New York"
+  author: "Orange County Department of Health"
+  # google-analytics: "G-XXXXXXXXXX"
+  downloads: [pdf]
+  chapters:
+    - index.qmd
+    - chapters/01-purpose-of-report.qmd
+    - chapters/02-methods.qmd
+    - chapters/03-data-notes.qmd
+    - chapters/04-definitions.qmd
+    - chapters/05-demographics.qmd
+    - chapters/06-Current Substance Use Disorder and Overdose Prevention Efforts in Orange County.qmd
+    - chapters/99-example-data-objects.qmd
+  sidebar:
+    style: docked
+    search: true
+    collapse-level: 2
+
+bibliography: references.bib
+csl: styles/vancouver.csl
+reference-location: section
+
+format:
+  html:
+    theme:
+      - default
+      - theme.scss
+    css: custom-citation-styles.css
+    include-in-header:
+      - includes/skip-link-head.html
+      - includes/google-translate.html
+    include-before-body: includes/skip-to-main.html
+    include-after-body: references-dropdown.html
+    toc: true
+    toc-depth: 3
+    page-layout: full
+    code-fold: true
+    code-tools: false
+    number-sections: true
+    smooth-scroll: false
+    fig-cap-location: top
+    tbl-cap-location: top
+  pdf:
+    documentclass: report
+    include-in-header:
+      - includes/pdf-table-packages.tex
+
+execute:
+  freeze: false

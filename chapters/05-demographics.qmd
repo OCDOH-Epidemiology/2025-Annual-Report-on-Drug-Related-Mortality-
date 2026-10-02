@@ -1,0 +1,84 @@
+---
+title: "Data"
+jupyter: python3
+toc: true
+toc-depth: 3
+execute:
+  freeze: false
+---
+
+```{python}
+#| echo: false
+#| warning: false
+#| message: false
+import sys
+from pathlib import Path
+
+cwd = Path.cwd()
+project_root = cwd if (cwd / "scripts").exists() else cwd.parent
+if str(project_root) not in sys.path:
+    sys.path.insert(0, str(project_root))
+
+CHA_WORKBOOK_PATH = project_root / "data" / "raw" / "workbook.xlsx"
+```
+
+
+
+
+Source: Washington/Baltimore HIDTA (n.d.) Overdose Detection Mapping Application Program (ODMAP)
+
+The Overdose Detection Mapping Application Program (ODMAP) provides near-real-time, suspected overdose data across jurisdictions to support public safety and public health efforts to mobilize an immediate response to a sudden increase, or spike, in overdose events. ODMAP links first responders and relevant record management systems to a mapping tool to track overdoses geographically. Because first responders gather this information on-scene, these incidents are considered “suspected” overdoses until a medical diagnosis can be made. These suspected overdoses include both fatal and non-fatal events.
+
+In Figure 1, each circle on the map represents a single suspected non-fatal overdose, and each diamond represents a single suspected fatal overdose. The color of each marker indicates the administration and amount of Naloxone used, as detailed in the accompanying legend.
+
+The suspected overdoses in Orange County often occur in clusters, with a majority (69.3%) occurring in just three ZIP codes: 12550, 10940, and 10950. While this trend of concentrated clusters has persisted, there has been a shift in the most affected areas. This shift is driven mainly by a sharp rise in overdoses within the 10950 ZIP code (+57.1%) and a large decline in the 12771 ZIP code (-52.4%). Additionally, the trends within each of those clusters vary. The 12550 ZIP code remained at the top of the list in both 2024 and 2025, experiencing a 28.9% increase in overdoses during that time. Conversely, the second most affected ZIP code, 10940, saw a 20.2% decrease while still remaining second highest on the list. From these clusters, the data shows overdoses spreading outward, primarily following the major highway corridors that run through the county; Interstates 84 and 87, and New York State Route 17.
+
+
+
+{{< include _generated/objects/fig-1.qmd >}}
+
+[@fig-1] shows the suspected overdoses by ZIP Code. From 2024 to 2025, six of the county’s ten most affected ZIP codes saw an increase in suspected overdoses: 12550 (28.9% increase), 10950 (54.5% increase), 10941; (7.4% increase), 12553 (19% increase), 12549 (37.5% increase); and 12589 (150% increase). At the same time, two of the county’s cities and largest population centers saw declines. The 10940 ZIP code, which includes the City of Middletown, experienced a 20.1% decrease, while the 12771 ZIP code, including the City of Port Jervis, saw the county’s largest decrease at 52.4%.
+
+ODMAP does have some limitations regarding the data it provides. Because suspected overdoses are recorded mainly by first responders on scene, an incident may not be captured if 911 is not called following an overdose. Additionally, an event will not be recorded if the responding agency fails to input the incident into ODMAP or does not share the resulting data with the Hudson Valley Crime Analysis Center. Despite these limitations, ODMAP remains our best tool for understanding—in near-real-time—where we are experiencing increased overdose-related activity.
+
+{{< include _generated/objects/fig-2.qmd >}}
+
+[@fig-2] shows that Orange County has had a continuous, year-over-year reduction in annual overdose fatalities since 2022. Total annual deaths decreased by 53.1% over this four-year period, dropping from a peak of 143 deaths in 2022 to a period low of 67 deaths in 2025. This represents 76 fewer deaths in 2025 compared to the peak in 2022.
+
+{{< include _generated/objects/fig-3.qmd >}}
+
+[@fig-3] shows the annual overdose fatalities by quarter, illustrating how seasonal patterns have shifted along with an overall decline in deaths. In 2022, overdose deaths remained consistently elevated across the first three quarters before experiencing a decline in the fourth quarter. The highest single-quarter death total for the entire four-year period occurred in the second quarter of 2023, peaking at 46 deaths, which was followed by a period-wide low of 15 deaths in the third quarter. By 2024 and 2025, quarterly fluctuations were more stable, with no single quarter exceeding 22 fatalities. Most notable was the first quarter of 2025 with only 9 recorded overdose deaths, marking the first time in four years that fatalities dropped to single digits.
+ 
+{{< include _generated/objects/fig-4.qmd >}}
+
+[@fig-4] displays the overdose deaths with the population-adjusted mortality rates, showing a continuous decline in the rate of overdose deaths per 100,000 residents from 2022 through 2025. The overdose rate peaked at 35.6 per 100,000 in 2022 and then dropped to 28.7 per 100,000 in 2023. This downward trend continued to sharply decline in 2024 dropping to 19.3 per 100,000 and then reaching the period low 16.6 deaths per 100,000 in 2025. Over this four-year period, the population overdose mortality rate in Orange County decreased by 53.4%.
+
+{{< include _generated/objects/fig-5.qmd >}}
+
+[@fig-5] displays the overdose deaths with the population-adjusted mortality rates broken down by sex from 2022 to 2025. Both groups experienced continuous, year-over-year declines throughout the four-year period, though a significant sex disparity persisted. The overdose death rate for males dropped from a peak of 51.8 per 100,000 in 2022 and then fell to 39.7 in 2023. This downward trend continued to sharply decline in 2024, dropping to 26.3 per 100,000 and then reaching the period low of 23.8 in 2025. This was a total decrease of 54.1% over four years. Similarly, the rate for females decreased from 19.0 per 100,000 in 2022 to 17.8 in 2023. A sharp decline was noted in 2024 with a rate of 10.9 per 100,000 followed by the period low of 7.9 in 2025, representing a 58.4% decline over four years. Despite these substantial reductions, the male overdose mortality rate remained about three times higher than the female rate in 2025.
+
+{{< include _generated/objects/fig-6.qmd >}}
+
+[@fig-6] displays the overdose deaths with the population-adjusted mortality rates broken down by age from 2022 to 2025. Over this four-year period, every age group experienced an overall decline in mortality rates, though substantial disparities remained between generations. The 35 to 44 age group consistently experienced the highest mortality burden, dropping from a peak of 71.8 per 100,000 in 2022 to 68.4 in 2023, 40.2 in 2024, and a period low of 36.2 in 2025. The 45 to 54 age group followed a similar trend, falling from 59.2 per 100,000 in 2022 to a period low of 25.2 in 2025. For the Over 55 demographic, a dramatic drop occurred early in the time period, falling sharply from 51.0 per 100,000 in 2022 to 28.3 in 2023, before stabilizing between 21.0 and 22.8 in the final two years. The slight increase noted in this older group in 2025 was driven primarily by the 55-64 age group. Conversely, residents Under 35 consistently maintained the lowest rates in the county, fluctuating around 10.9 per 100,000 in 2022 and 2023 before dropping to a period low of 5.2 in 2025. Notably, 2025 marked the first time in four years that no deaths were reported in the 0-25 age group.
+
+{{< include _generated/objects/fig-7.qmd >}}
+
+[@fig-7] displays the distribution of overdose deaths by substance classification in 2025, illustrating the relative contribution of opioids, stimulants, and other substances. The most frequently identified drug classification in 2025 was cocaine, with 41 fatalities (61.2%) having cocaine or its metabolites present. Fentanyl and its analogues were the next highest classification, detected in 36 deaths (53.7%). This represents a notable shift from previous local trends where fentanyl consistently ranked as the leading drug classification in overdose mortality. Despite this shift, opioids as a broader category remain the most prevalent drug type, followed closely by all stimulants. While not a majority, alcohol and benzodiazepines were also present in a large share of overdose fatalities (29.9% and 20.9%, respectively).
+ 
+ {{< include _generated/objects/fig-10.qmd >}}
+ 
+[@fig-10] outlines the ten drugs most commonly present in the body at time of death for 2025, compared to their frequency in 2024. A marked shift in substance prevalence occurred between the two years. Most notably, the data reveals a 5.3% decline in deaths where fentanyl was identified and a 7.1% increase in cases involving cocaine. This trend has been developing since 2023, a year in which Orange County saw 115 overdose deaths; that year, fentanyl appeared in 75.9% of toxicology reports while cocaine appeared in 42.2%. This ongoing shift pushed cocaine past fentanyl as the single substance most frequently found in the body at the time of death in 2025.
+Ethanol (20.9% of deaths) and cocaethylene (11.9% of deaths) emerged as the third and fourth most frequently identified substances in 2025. Ethanol is an active ingredient in alcoholic beverages, and cocaethylene is a highly toxic metabolite formed in the body when cocaine and alcohol are consumed at the same time. Due to the incredibly short metabolic half-life of cocaine, cocaethylene is often identified in toxicologic panels even after cocaine itself has cleared the system. In addition to its longer half-life, cocaethylene is itself a toxic substance, presenting a 25-fold increase in the risk of fatal heart failure. The prominent ranking of these two substances further emphasizes the increase in localized cocaine use and underscores the heightened risk of fatal overdose when combining alcohol with other substances.
+Another emerging trend is the rise in mitragynine, commonly known as kratom. While kratom itself is not structurally classified as an opioid, when taken in larger quantities, it can act in a similar way to other opioids, leading to tolerance, physical dependence, and withdrawal symptoms. In December 2025, New York Governor Kathy Hochul signed a public health law prohibiting the sale of kratom products to individuals under 21 years of age, and requiring manufacturers of these products to include a prominent consumer warning label on their packaging. Orange County partners, including the Tri-County Prevention Partnership, were instrumental in advocating for and assisting in the passing of this legislation. Along with these state-level efforts, providers in Orange County are combating this growing concern by working to educate the public on the effects and potential dangers of emerging substances including kratom and kratom-derived products. These efforts are further detailed later in this report. 
+At the same time, a decrease has been noted across both Orange County and New York State in the prevalence of xylazine found in both toxicology reports and street-level drug checking programs. However, in December of 2025, the New York State Department of Health issued an urgent public health alert1 warning of a significant statewide surge in medetomidine, a similar but higher-strength veterinary sedative, within the illicit drug supply. New York State’s drug checking programs noted an increase in medetomidine being found, rising from 4% of samples tested in 2024 to 38% of samples tested in 2025. This is an emerging trend, and medetomidine is not currently included in standard toxicology reports. Without a localized drug checking program in Orange County to track this, it is presumed that the observed decrease in xylazine is likely accompanied by the increase in medetomidine that is being seen statewide.
+
+
+ {{< include _generated/objects/fig-9.qmd >}}
+
+
+
+
+
+
+
+1 New York State Department of Health, "New York State Department of Health Warns of Highly Potent Synthetic Sedative More Powerful Than Xylazine Emerging in Drug Checking Samples," press release, December 19, 2025, https://www.health.ny.gov/press/releases/2025/2025-12-19_synthetic_sedative.htm

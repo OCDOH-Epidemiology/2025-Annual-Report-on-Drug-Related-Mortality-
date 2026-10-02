@@ -1,0 +1,16 @@
+<!-- indicator: tbl-4 -->
+
+```{python}
+#| echo: false
+#| warning: false
+#| message: false
+#| label: tbl-4
+#| tbl-cap: 'Rate of Overdose Deaths per 100,000 Population by Year 2021–2024'
+from scripts.cha_registry_renderer import render_table_object
+render_table_object(object_id="tbl-4", workbook_path=CHA_WORKBOOK_PATH)
+```
+
+::: {.callout-note collapse="true"}
+## Source
+Office of the Medical Examiner, Orange County, New York; and U.S. Census Bureau; American Community Survey, 2023 American Community Survey 5-Year Estimates.
+:::

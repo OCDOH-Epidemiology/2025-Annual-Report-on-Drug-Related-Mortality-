@@ -1,0 +1,15 @@
+---
+title: "Methods"
+jupyter: python3
+execute:
+  freeze: false
+---
+
+Drug Classification: For the purpose of this report, target drug compounds found in post-mortem toxicology reports were classified into select groups before being represented in graph form. In some instances, metabolites produced by the body during drug metabolism are classified under their corresponding parent drug category. For example, the metabolite cocaethylene, which forms only in the body if both alcohol and cocaine are consumed at the same time, is classified as both alcohol and cocaine. The visuals in this report are always titled to make clear whether they display a count of a specific drug or a count of the drug classification. See Appendix A for drug classification breakdowns.
+
+Overdose Deaths: The Orange County Office of the Medical Examiner (OCOME) investigates sudden, unexpected, and unnatural fatalities in Orange County to ensure accurate cause and manner of death certification. Death investigations conducted by the OCOME include, but are not limited to, any death that is not due to 100% natural causes, deaths occurring as a result of workplace injury, deaths that are unattended by a physician, deaths resulting from homicides or suicides, and any deaths in which injury is a contributing factor (this includes acute drug intoxication and overdoses).
+For suspected overdose deaths, OCOME staff collect specimens for toxicological analysis to determine which substances may have contributed to the death. Other complex tests may also be required. Because these procedures can take 8 to 12 weeks or longer to complete, the final report cannot be finalized until all data are gathered and testing reports are finished.
+
+OCOME is required to investigate deaths that occur in Orange County so this report may include non-residents. The report does not include residents that died of an overdose outside of Orange County.
+Suspected Overdoses: The Overdose Detection Mapping Application Program (ODMAP) provides current suspected overdose data across Orange County. Overdose data are recorded on scene by first responders including: local police departments, county police, state police, or emergency medical services and entered into ODMAP by staff at the Hudson Valley Crime Analysis Center. These are considered “suspected” overdoses because they have not been confirmed by a medical professional. However, monitoring these local trends in emergency response to suspected overdose can ensure local resources can be mobilized effectively.
+

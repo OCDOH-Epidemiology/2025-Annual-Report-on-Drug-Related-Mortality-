@@ -1,0 +1,31 @@
+---
+title: "2025 Annual Report on Drug-Related Mortality"
+jupyter: python3
+execute:
+  freeze: false
+page-layout: full
+---
+
+::: {.hero}
+A data-driven annual report on drug-related mortality in Orange County, New York.
+:::
+
+## About this report
+
+*TODO: Brief purpose statement — who this report is for, what years of data it covers, and how it will be used.*
+
+## Population focus
+
+>- Orange County, New York
+
+## Questions or comments
+
+For questions about this report, please contact:
+
+### Orange County Department of Health
+
+>**Name, Credentials**\
+> Title\
+> [email@example.org](mailto:email@example.org)
+
+<!-- TODO: Update contact block with real names and emails. -->

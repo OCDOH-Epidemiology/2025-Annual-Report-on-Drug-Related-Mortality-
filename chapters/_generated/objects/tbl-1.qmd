@@ -1,0 +1,16 @@
+<!-- indicator: tbl-1 -->
+
+```{python}
+#| echo: false
+#| warning: false
+#| message: false
+#| label: tbl-1
+#| tbl-cap: 'Suspected Overdoses by Zip Code, 2024 vs. 2025'
+from scripts.cha_registry_renderer import render_table_object
+render_table_object(object_id="tbl-1", workbook_path=CHA_WORKBOOK_PATH)
+```
+
+::: {.callout-note collapse="true"}
+## Source
+Washington/Baltimore HIDTA (n.d.) Overdose Detection Mapping Application Program (ODMAP)
+:::

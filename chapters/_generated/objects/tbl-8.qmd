@@ -1,0 +1,21 @@
+<!-- indicator: tbl-8 -->
+
+```{python}
+#| echo: false
+#| warning: false
+#| message: false
+#| label: tbl-8
+#| tbl-cap: 'Share of Occurrences of Select Drugs in Toxicology Screenings, 2024'
+from scripts.cha_registry_renderer import render_table_object
+render_table_object(object_id="tbl-8", workbook_path=CHA_WORKBOOK_PATH)
+```
+
+::: {.callout-note collapse="true"}
+## Source
+Office of the Medical Examiner, Orange County, New York
+:::
+
+::: {.callout-note}
+Note: These drug classifications were present and contributory to the cause of death. While other non-contributory drugs or compounds may have also been present, this visual is strictly limited to substances deemed contributory by the Medical Examiner. This figure tracks the total number of fatalities in which each drug classification was identified; because categories are not mutually exclusive due to multi-substance overdoses, the cumulative counts exceed 67 total deaths recorded in 2025.
+A list of the drugs used for these classifications is included on Appendix A.
+:::

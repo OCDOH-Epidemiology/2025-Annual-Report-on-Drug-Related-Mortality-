@@ -1,0 +1,42 @@
+---
+title: "Definitions"
+jupyter: python3
+toc: true
+toc-depth: 3
+execute:
+  freeze: false
+---
+
+Drug Overdose: The Office of the Medical Examiner conducts autopsies and examinations to determine if toxic concentrations or combinations of drugs were present in the body and contributed to the fatality. If drugs are deemed contributory, they are listed in the cause of death statement and included in the annual overdose data. Deaths included in this report reflect both accidental and suicidal (intentional) overdoses. They are also referred to as “overdose deaths” or “overdose mortality.”
+
+Benzodiazepines: Colloquially known as benzos, benzodiazepines are a class of depressant drugs prescribed to treat conditions such as anxiety disorders, insomnia, or seizures. Common benzodiazepines include Xanax, Valium, Ativan, and Klonopin. For this report, benzodiazepines have been separated from their larger classification of central nervous system depressant due to the high prevalence of their misuse and their high potential for dependency.
+
+Cannabis: Cannabis or cannabinoids refers to the dried leaves, flowers, stems, and seeds of the cannabis plant, which can be smoked, vaped, or consumed as an edible food or beverage. While there are many chemical compounds within the plant, tetrahydrocannabinol (THC) is the primary psychoactive compound that produces a high. Other names include marijuana, pot, grass, weed, and hash.
+
+Central Nervous System Depressants: Central nervous system (CNS) depressants are medications used to treat anxiety, panic attacks, seizures, and insomnia. They slow down brain activity causing muscles to relax and leading to feelings of drowsiness, relaxation, and reduced inhibitions. Common CNS depressants include benzodiazepines (Valium, Klonopin, Xanax), barbiturates (phenobarbital, Nembutal), and sleep aids (Ambien, Lunesta, and Sonata).
+
+Cocaethylene: Cocaethylene is a toxic, psychoactive substance created automatically by the liver when cocaine and alcohol (ethanol) are consumed together.
+
+Dissociative Anesthetics/Hallucinogens: These are psychoactive drugs that alter a person’s perception, mood, or cognition, often causing people to feel separated from their body or experience an altered state of consciousness. Common dissociative anesthetics are Ketamine, PCP (phencyclidine), nitrous oxide, and dextromethorphan, and in addition to an altered sense of perception they can also have a sedation effect in users. Common hallucinogens include LSD (lysergic acid diethylamide), mescaline, psilocybin, PCP, ecstasy, and ketamine.
+
+Ethanol: Ethanol refers to a colorless volatile flammable liquid that is the main intoxicating agent in liquors and is also used as a solvent and in fuel.
+
+Medetomidine: Medetomidine is a potent, short-acting alpha-2 agonist used as a non-opioid sedative for analgesic and muscle-relaxant effects. Its pharmacological effects are similar to those of xylazine. Like xylazine, medetomidine is increasingly found as an adulterant in illicit substances.
+
+Medications for Opioid Use Disorder [MOUD]: Sometimes referred to as Medication-Assisted Treatment, US Food and Drug Administration (FDA) approved Medications for Opioid Use Disorder include buprenorphine, methadone, and naltrexone. Brand names for these medications include Suboxone, Sublocade, Zubsolv, Methadose, and Vivitrol. These drugs interact with opioid receptors in the brain to ease withdrawal symptoms and cravings while preventing any other opioid from taking effect. MOUD remains the most effective, evidence-based treatment for Opioid Use Disorder.
+
+Mitragynine (Kratom): Mitragynine is the primary psychoactive alkaloid found in the Southeast Asian plant Mitragyna speciosa, commonly known as kratom. It acts as a partial opioid receptor agonist and is consumed for its stimulant-like effects in small doses and its pain-relieving, sedative effects in larger doses.
+
+Naloxone: Often known by its brand name, Narcan, naloxone is an FDA-approved medication designed to rapidly reverse the effects of an opioid overdose. As an opioid antagonist, naloxone will not reverse the effects of non-opioid substances. 
+
+Opioids: Opioids are a class of natural, semi-synthetic, or synthetic drugs used to reduce pain by attaching to opioid receptors in the brain and other organs to decrease the intensity of pain signals. Common opioids include morphine, heroin, codeine, oxycodone, and fentanyl. For this report, opioids have been separated from the broader CNS Depressant category due to the prevalence of their misuse and their high potential for dependency.
+
+Other Drugs: The expansive scope of postmortem toxicology testing captures a wide array of drugs and medications present at the time of death, including compounds that may be deemed non-contributory to the fatality. For this report, only those drugs directly contributory to the overdose death are listed. Medicinal drugs found to be non-contributory—such as blood pressure medications, supplements, or anticoagulants—are excluded.
+
+Prescription Opioids: These medications are primarily used to manage and treat moderate to severe pain. While generally safe when taken for a short time as prescribed by a doctor, they can be misused. Prescription opioids are tracked in this data regardless of whether they were explicitly prescribed to the decedent. Common examples include hydrocodone, oxycodone, oxymorphone, morphine, and codeine.
+
+Rate: A rate measures the frequency with which an event occurs in a defined population over a specified period. Rates are used to normalize raw counts against the overall size of the population.
+
+Stimulants: This term covers a broad class of drugs that increase central nervous system activity. It includes prescription medications like Ritalin and Adderall, as well as illicit substances such as methamphetamine, cocaine, and crack cocaine. Stimulants carry a high potential for dependency and overdose; when mixed with opioids, they significantly increase the risk of overdose mortality.
+
+Xylazine: Xylazine is a tranquilizer, pain reliever, and central nervous system depressant that is approved by the FDA for veterinary medicine but not approved for human use. It is increasingly found as an adulterant in the illicit drug supply. For this report, xylazine has been separated from the CNS Depressant category due to its rising presence in the illicit drug supply and the distinct challenges it presents in reversing and preventing overdoses.

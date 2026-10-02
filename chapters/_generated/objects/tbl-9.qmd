@@ -1,0 +1,16 @@
+<!-- indicator: tbl-9 -->
+
+```{python}
+#| echo: false
+#| warning: false
+#| message: false
+#| label: tbl-9
+#| tbl-cap: 'Percent of Overdose Deaths by Opioid and Stimulant Involvement, 2021–2024'
+from scripts.cha_registry_renderer import render_table_object
+render_table_object(object_id="tbl-9", workbook_path=CHA_WORKBOOK_PATH)
+```
+
+::: {.callout-note collapse="true"}
+## Source
+Office of the Medical Examiner, Orange County, New York
+:::

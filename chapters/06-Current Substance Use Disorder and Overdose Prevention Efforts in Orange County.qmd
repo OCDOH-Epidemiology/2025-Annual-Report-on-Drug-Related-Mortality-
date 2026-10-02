@@ -1,0 +1,79 @@
+---
+title: "Current Substance Use Disorder and Overdose Prevention Efforts in Orange County"
+jupyter: python3
+toc: true
+toc-depth: 3
+execute:
+  freeze: false
+---
+
+```{python}
+#| echo: false
+#| warning: false
+#| message: false
+import sys
+from pathlib import Path
+
+cwd = Path.cwd()
+project_root = cwd if (cwd / "scripts").exists() else cwd.parent
+if str(project_root) not in sys.path:
+    sys.path.insert(0, str(project_root))
+
+CHA_WORKBOOK_PATH = project_root / "data" / "raw" / "workbook.xlsx"
+```
+
+## WELCOME Orange
+
+WELCOME Orange is a community-driven collaboration dedicated to promoting healthy living in Orange County through the leadership and cooperation of multidisciplinary service providers. Its mission is to create a welcoming, person-centered environment where individuals can easily access resources that support their health and well-being. By working together, participating agencies align their goals, share best practices, and speak with a unified voice to improve outcomes for those seeking assistance. This initiative fosters a seamless experience across all partner organizations, ensuring efficient service delivery and empowering individuals to achieve their goals. Ultimately, WELCOME Orange serves as the umbrella under which Orange County and its partners unite to serve the community.
+
+## Changing the Orange County Addiction Treatment Ecosystem
+
+In 2017, the Orange County Department of Mental Health launched a major initiative to find gaps in the local substance use treatment system. This project, called “Changing the Orange County Addiction Treatment Ecosystem,” brought together nearly 200 stakeholders from government, healthcare, and addiction treatment. Through seven intensive workshops, stakeholders identified more than 70 challenges, including a major lack of coordinated care for adolescents and pregnant patients. The resulting report laid the groundwork for expanding local treatment options. Today, this foundation drives ongoing efforts to fight the opioid crisis through community education, evidence-based treatments, and continuous system improvements.
+
+Since this launch, new projects have further strengthened the partnership between Orange County and its local service agencies. These initiatives continue to drive system-wide changes across the local addiction and mental health landscape. Specifically, four dedicated workgroups were formed to advance the goals of the original “Ecosystem” project—
+
+### Community Alliance for Prevention (CAP) Workgroup
+
+The Community Alliance for Prevention (CAP) workgroup is compiled of multiple stakeholders from different facets of prevention but primarily from the substance use field. The CAP group meets regularly and discusses the progress being made by the local community coalitions that are spread throughout Orange County. The group is responsible for keeping prevention messaging across Orange County cohesive, evidence-based, and culturally relevant and appropriate. CAP coordinates activities with schools, local police departments, and other relevant stakeholders to promote prevention efforts aimed at reducing substance misuse in children, teens, and young adults and ultimately reduce the opioid burden in Orange County. Most recently, CAP led an effort to perform the Community Level Youth Development Evaluation (CLYDE) at several school districts within the county to better evaluate the students perception of harm and risk.
+
+### Data Workgroup
+
+This specialized team brings members together quarterly to review local and regional drug trends, syndromic surveillance and overdose data. The group actively refines data collection methods to better understand and explain shifting local trends. Additionally, members develop new assessment tools and protocols to expand data sharing across Orange County. These collaborative efforts directly shaped the selection of data points featured throughout this report.
+
+### Overdose Education and Naloxone Distribution (OEND) Workgroup
+
+This team unites overdose prevention providers to identify regional gaps in education and naloxone access. Members share staff and resources to host public training sessions for local businesses and community groups. Notably, the workgroup has facilitated the deployment of over 250 wall-mounted naloxone boxes across Orange County. Since assuming the responsibilities of the former Communications Workgroup, the team also creates and distributes public health messaging regarding substance use.
+
+### Persons With Lived Experience (PWLE) Workgroup
+
+This group consists of individuals who self-identify as having lived experience with substance use disorders. While many members work within the field of SUD treatment or prevention, professional alignment is not a requirement. Recently, the group focused on hosting regular “Peer Roundtable” events across the county. These forums allow people who use drugs and frontline workers to collectively discuss systemic barriers to care and recovery. Ultimately, these insights help shape future interventions to close local service gaps. To date, the workgroup has hosted roundtables in Newburgh, Port Jervis, Middletown, and the Village of Walden, with plans to expand into other county corridors.
+
+## Non-Fatal Overdose Outreach Team
+
+The non-fatal overdose (NFO) team is a peer run initiative funded through OCDMH to provide ongoing support to those that have experienced a non-fatal overdose. The NFO team was created in 2021 as a key strategy to engage individuals into treatment, who might otherwise not be ready to accept help. While medical personnel and emergency responders are first on the scene following an overdose, the individuals who experienced the overdose are not always ready to accept the help in that immediate aftermath. The NFO team follows up in person 24-48 hours after learning of a non-fatal overdose with a two-person peer led team and resources in hand. This timeframe is recommended as best-practice for post-overdose follow up by New York State. Furthermore, people are more receptive to accepting help from peer advocates than first responders. The NFO team works to engage the client and get them into treatment or to provide other supports as necessary. They also provide follow-up after the client has completed inpatient treatment or while they are attending outpatient treatment.
+
+## Opioid Settlement Funds
+
+Orange County is a recipient of Opioid Settlement Funds, which stem from legal settlements between local and state governments and companies involved in manufacturing or dispensing of prescription opioids. These funds are dedicated to supporting states, counties, and municipalities in opioid prevention, treatment, recovery, and harm reduction efforts. In 2025, Orange County invested these dollars across several key areas: $499,718 for the treatment continuum, $200,000 for housing initiatives, $203,287 for priority population interventions, and $921,630 for prevention efforts; totaling $1,824,636 invested back into the community in 2025 alone. More information on the disbursement of these funds can be found on the NYS Office of Addiction Services and Supports webpage.^[New York State Office of Addiction Services and Supports, "Opioid Settlement Fund Regional Abatements," last modified September 25, 2025, https://oasas.ny.gov/opioid-settlement-fund-regional-abatements]
+
+## Education and Prevention Efforts
+
+Orange County is dedicated to making sure that both field professionals and the general public are educated on substance use disorders, even as the trends evolve at a rapid pace. Collaborative partnerships with numerous local agencies have enabled the county to host vital webinars on emerging public health topics. This includes a four-part virtual learning series focused on xylazine and wound-care practices for frontline workers serving affected populations. In conjunction with these educational sessions, the Orange County Department of Mental Health (OCDMH) purchased medical supplies to assemble specialized wound-care kits for individuals suffering from xylazine-associated skin lesions. Furthermore, the department actively distributes Naloxone kits along with advanced testing strips to detect xylazine, medetomidine, nitazenes, and fentanyl.
+
+OCDMH also hosts a bimonthly meeting for prescribers and dispensers of Medication for Opioid Use Disorders (MOUD). This forum allows providers to discuss systemic barriers and shared successes in managing MOUD patient care. Whenever possible, OCDMH invites external organizations to present on critical and timely topics. Recent presenters include the Upstate Poison Control Center, the Opioid Response Network, and the Opioid Response Strategy. These external experts share their expertise on emerging substances and evidence-based clinical practices for treating individuals impacted by these trends and substance use.
+
+Beyond professional development, significant efforts are directed toward educating the general public. OCDMH hosts regular Naloxone training sessions, both by request and as a standing monthly training, where participants learn to recognize and respond to opioid overdoses while reviewing current regional drug trends and local data. The Mid-Hudson Prevention Resource Center (MHPRC) and local community coalitions actively work to keep both youth and the broader public informed about emerging substances. Through specialized community scan trainings, youth coalition members and local schools learn to identify how products like kratom are marketed and advertised in gas stations and local businesses, building critical awareness of these access points. Moving forward, these initiatives will continue to expand, ensuring that local coalitions and grassroots prevention providers utilize up-to-date data and evidence-based practices.
+
+## Annual Substance Use Disorder Summits
+
+Since 2023, the Orange County Department of Mental Health, in partnership with the Orange County District Attorney’s office, SUNY Orange, the Alcohol and Drug Awareness Council of Orange County, and Orange County Stop DWI, has hosted a local summit dedicated to pressing issues in the field of substance use disorders. The first summit, held in September of 2023, focused on fentanyl and its analogues, emphasizing the role these potent synthetic substances played in the sharp incline of nationwide overdose deaths between 2019 and 2023. The following year, the focus shifted to legal substances and the consequences of their use. This timely topic aligned with the opening of cannabis dispensaries across New York State and Orange County, as well as the concurrent uptick in Driving While Intoxicated arrests. This forum also provided an avenue to discuss alcohol and other substance often perceived as less dangerous; including kratom, nitrous oxide, and synthetic cannabis products.
+
+The most recent summit highlighted the core philosophies of WELCOME Orange, focusing on co-occurring substance use and mental health disorders. As the largest event to date, it drew 144 individuals representing 68 different agencies. The summit featured two keynote speakers and three separate breakout sessions. These sessions focused on the prevention of co-occurring disorders, the intersection of criminal justice and mental health/substance use treatment systems, and a diverse case study used to identify systemic gaps and available resources for individuals with co-occurring disorders.
+
+## Expanding the Scope of Opioid-Related Data Collection
+
+In recent years, significant progress has been made to expand the scope and capabilities of local substance use data collection. This report was developed through a strategic partnership among Orange County’s Department of Health (OCDOH), the Office of the Medical Examiner, and the Department of Mental Health (OCDMH). This interagency collaboration has greatly enhanced the county's ability to track emerging drug trends, deploy targeted harm reduction resources, and coordinate overdose responses.
+
+Because OCDOH is required to complete a Community Health Assessment and Community Health Improvement Plan every five years, the county has an opportunity to gather health-related data from the community at regular intervals. While most of these surveys focus on general wellness, Orange County has made a concerted effort to collect more information related to behavioral health and substance use. Furthermore, this data collection now prioritizes the underlying social determinants of health that drive most outcomes in both behavioral and physical health. In addition, OCDMH is required to complete a behavioral health assessment of both the public and professional communities. The department is actively working to ensure relevant, impactful data are captured through surveying, as well as through the regular monitoring and oversight of partner agencies funded with county dollars.
+
+As the partnership between OCDOH and OCDMH continues to grow, both agencies are pursuing additional sources of behavioral health data. A priority is optimizing how the county utilizes and shares data across local, state, and national networks. Specifically, partners are working to integrate insights from the Electronic Syndromic Surveillance System,^[New York State Department of Health, "Electronic Syndromic Surveillance System (ESSS)," last modified April 2026, https://www.health.ny.gov/professionals/reportable_diseases/esss/] the National Emergency Medical Services Information System,^[National Emergency Medical Services Information System, accessed May 28, 2026, https://nemsis.org/] and the Overdose Detection Mapping Application Program^[Washington/Baltimore High Intensity Drug Trafficking Area. "Overdose Detection Mapping Application Program (ODMAP)," accessed May 28, 2026. https://www.odmap.org/] to build a more comprehensive and unified response system.

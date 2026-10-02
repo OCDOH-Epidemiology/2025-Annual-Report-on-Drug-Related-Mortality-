@@ -1,0 +1,111 @@
+/* Custom citation styles - loads after Bootstrap to ensure overrides work */
+/* This file should be included in quarto.yml to load after Bootstrap */
+
+/* Force remove underlines from citation links - highest specificity */
+a[href^="#cite-"],
+a[href^="#cite-"]:link,
+a[href^="#cite-"]:visited,
+a[href^="#cite-"]:hover,
+a[href^="#cite-"]:active,
+a[href^="#cite-"]:focus,
+a[href^="#cite-"]:any-link {
+  font-size: inherit !important;
+  line-height: inherit !important;
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+  text-decoration-style: none !important;
+  text-decoration-thickness: 0 !important;
+  text-underline-offset: 0 !important;
+  text-underline-position: unset !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  -webkit-text-decoration: none !important;
+  -moz-text-decoration: none !important;
+  vertical-align: baseline !important;
+}
+
+/* Quarto/Pandoc citation links */
+a[role="doc-biblioref"],
+a[role="doc-biblioref"]:link,
+a[role="doc-biblioref"]:visited,
+a[role="doc-biblioref"]:hover,
+a[role="doc-biblioref"]:active,
+a[role="doc-biblioref"]:focus {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* Move figure caption above the figure for #fig-labor-force */
+.quarto-float[id^="fig-labor-force"] {
+  display: flex;
+  flex-direction: column;
+}
+
+.quarto-float[id^="fig-labor-force"] .quarto-float-caption-bottom {
+  order: -1;
+  margin-bottom: 0.5em;
+  margin-top: 0;
+}
+
+.quarto-float[id^="fig-labor-force"] figcaption.quarto-float-caption-bottom {
+  order: -1;
+  margin-bottom: 0.5em;
+  margin-top: 0;
+}
+
+/* Quarto adds Bootstrap .table-striped grey overlay via inset box-shadow.
+   CHA tables use their own white/green striping — keep true white rows. */
+.table.table-striped > tbody > tr > * {
+  --bs-table-bg-type: transparent;
+  --bs-table-accent-bg: transparent;
+  box-shadow: none !important;
+}
+
+/* Google Translate widget (sidebar, all HTML chapters). */
+.cha-google-translate {
+  padding: 0.35rem 0.15rem 0.85rem;
+}
+
+.cha-google-translate-label {
+  color: var(--cha-muted, #3d3d3d);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+}
+
+.cha-google-translate .goog-te-gadget {
+  color: var(--cha-muted, #3d3d3d);
+  font-family: inherit !important;
+  font-size: 0.75rem !important;
+}
+
+.cha-google-translate .goog-te-combo {
+  background: #ffffff;
+  border: 1px solid rgba(154, 205, 76, 0.6);
+  color: #000000;
+  font-family: inherit;
+  font-size: 0.95rem;
+  margin-top: 0.15rem;
+  min-height: 2.75rem;
+  padding: 0.35rem 0.45rem;
+  width: 100%;
+}
+
+.goog-te-banner-frame,
+.skiptranslate iframe,
+body > .skiptranslate {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}
