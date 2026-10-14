@@ -7,25 +7,23 @@ page-layout: full
 ---
 
 ::: {.hero}
-A data-driven annual report on drug-related mortality in Orange County, New York.
+Orange County respectfully acknowledges that every data point in this report represents a human life and the loss of a loved one.
 :::
 
 ## About this report
 
-*TODO: Brief purpose statement — who this report is for, what years of data it covers, and how it will be used.*
+This joint report provides community leaders and public health partners with data-driven insights into shifting toxicological patterns and localized drug trends. The findings serve as a strategic blueprint to optimize outreach networks, guide public education, and deploy targeted overdose prevention programs across Orange County.
+ 
 
 ## Population focus
 
->- Orange County, New York
+This report covers all fatalities within Orange County between January 1 and December 31, 2025, with a dedicated focus on drug overdose deaths.
 
 ## Questions or comments
 
-For questions about this report, please contact:
+For any questions regarding this report or use of the data contained within, please contact:
 
-### Orange County Department of Health
+Orange County Department of Health, Division of Epidemiology and Public Health Planning 
 
->**Name, Credentials**\
-> Title\
-> [email@example.org](mailto:email@example.org)
-
-<!-- TODO: Update contact block with real names and emails. -->
+> Phone Number: 845-862-6647
+> Email: [epidemiology@orangecountyny.gov](mailto:epidemiology@orangecountyny.gov)

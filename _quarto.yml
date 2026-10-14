@@ -16,7 +16,7 @@ lang: en
 book:
   title: "2025 Annual Report on Drug-Related Mortality"
   subtitle: "Orange County, New York"
-  author: "Orange County Department of Health"
+  author: "Orange County - Department of Health, Department of Mental Health, and Office of the Medical Examiner"
   # google-analytics: "G-XXXXXXXXXX"
   downloads: [pdf]
   chapters:
