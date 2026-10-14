@@ -12,6 +12,6 @@ This report is a joint effort between the Office of the Medical Examiner, the De
 
 The report aims to:
 
-> - Provide annual data on fatal overdoses to local planning partners
-> - Analyze trends in drug type, demographics, and location
-> - Inform community level overdose prevention and response programs
+> Provide annual data on fatal overdoses to local planning partners\
+> Analyze trends in drug type, demographics, and location\\
+> Inform community level overdose prevention and response programs\
