@@ -11,6 +11,6 @@ execute:
 
 For suspected overdose deaths, OCOME staff collect specimens for toxicological analysis to determine which substances may have contributed to the death. Other complex tests may also be required. Because these procedures can take 8 to 12 weeks or longer to complete, the final report cannot be finalized until all data are gathered and testing reports are finished.
 
-**OCOME** is required to investigate deaths that occur in Orange County so this report may include non-residents. The report does not include residents that died of an overdose outside of Orange County.
+OCOME is required to investigate deaths that occur in Orange County so this report may include non-residents. The report does not include residents that died of an overdose outside of Orange County.
 
 **Suspected Overdoses:** The Overdose Detection Mapping Application Program (ODMAP) provides current suspected overdose data across Orange County. Overdose data are recorded on scene by first responders including: local police departments, county police, state police, or emergency medical services and entered into ODMAP by staff at the Hudson Valley Crime Analysis Center. These are considered “suspected” overdoses because they have not been confirmed by a medical professional. However, monitoring these local trends in emergency response to suspected overdose can ensure local resources can be mobilized effectively.
