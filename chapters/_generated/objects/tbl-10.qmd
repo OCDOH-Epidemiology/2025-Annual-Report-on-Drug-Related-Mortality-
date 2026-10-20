@@ -1,0 +1,20 @@
+<!-- indicator: tbl-10 -->
+
+```{python}
+#| echo: false
+#| warning: false
+#| message: false
+#| label: tbl-10
+#| tbl-cap: 'Top 10 Substances Identified in Overdose Fatalities, 2024–2025'
+from scripts.cha_registry_renderer import render_table_object
+render_table_object(object_id="tbl-10", workbook_path=CHA_WORKBOOK_PATH)
+```
+
+::: {.callout-note collapse="true"}
+## Source
+Office of the Medical Examiner, Orange County, New York
+:::
+
+::: {.callout-note}
+Note: The drugs in this table have not been categorized into broader classifications and represent the true, standalone occurrences of each specific substance. While these substances were present in toxicology findings at the time of death, they may not have been the direct cause of death. Furthermore, additional drugs or compounds may have been present; however, this dataset is strictly limited to these ten drugs. The list is not mutually exclusive, as a single multi-substance fatality can contribute to the counts of multiple drugs. For this reason, the cumulative counts do not equal the 67 overall deaths recorded in 2025. For reference, there were 78 deaths in 2024.
+:::
