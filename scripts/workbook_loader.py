@@ -29,6 +29,7 @@ VALID_FIGURE_TYPES = {
     "horizontal_stacked_bar",
     "horizontal_clustered_bar",
     "pie",
+    "treemap",
     "dot_whisker",
 }
 _VALID_FORMAT_CODES: frozenset[str] = frozenset(
@@ -116,6 +117,10 @@ _FIGURE_TYPE_ALIASES: dict[str, str] = {
     "pie": "pie",
     "pie chart": "pie",
     "pie_chart": "pie",
+    "10": "treemap",
+    "treemap": "treemap",
+    "tree map": "treemap",
+    "tree_map": "treemap",
 }
 
 

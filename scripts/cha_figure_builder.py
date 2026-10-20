@@ -2,8 +2,8 @@
 CHA Figure Builder
 
 Utilities for creating CHA figures (lines, clustered bars, stacked bars, simple bars,
-horizontal bars, horizontal stacked/clustered bars, pie charts, and dot-whisker / CI
-plots) with consistent styling and ordering.
+horizontal bars, horizontal stacked/clustered bars, pie charts, treemaps, and
+dot-whisker / CI plots) with consistent styling and ordering.
 Includes a helper to display a figure above its table output in Quarto/Jupyter.
 """
 
@@ -1444,6 +1444,155 @@ def build_interactive_line_figure(
             tickfont=dict(size=tick_font_size),
         )
 
+    return fig
+
+
+# Matches the substance-classification treemap (opioids / stimulants / other).
+_TREEMAP_GROUP_COLORS = {
+    "all opioids": "#9ACD4B",
+    "all stimulants": "#FFC100",
+    "other": "#D35840",
+}
+
+
+def _treemap_leaf_text(label: str, value: float) -> str:
+    count = int(round(float(value)))
+    words = str(label).split()
+    if len(words) > 1 and len(str(label)) > 12:
+        return f"{' '.join(words[:-1])}<br>{words[-1]}, {count}"
+    return f"{label}, {count}"
+
+
+def build_treemap_figure(
+    df: pd.DataFrame,
+    x_col: str,
+    y_cols: list[str] | None = None,
+    *,
+    x_axis_title: str | None = None,
+    y_axis_title: str | None = None,
+    start_at_zero: bool = True,
+    y_padding: float = 0.1,
+    palette: list[str] | None = None,
+    width: int = 980,
+    height: int = 560,
+    font_family: str = CHA_FONT_FAMILY,
+    hover_value_format: str = ".0f",
+    hover_suffix: str = "",
+    show_data_labels: bool = True,
+) -> go.Figure:
+    """
+    Hierarchical treemap. Three columns use the repeated group column as the
+    parent and the unique text column as the leaf. Two columns draw a flat treemap.
+
+    shortcut: leaf text is an integer count; percent hover suffixes are ignored.
+    """
+    del x_axis_title, y_axis_title, start_at_zero, y_padding, hover_value_format, hover_suffix
+
+    value_candidates = [col for col in (y_cols or []) if col in df.columns and col != x_col]
+    if not value_candidates:
+        value_candidates = [col for col in df.columns if col != x_col]
+    if not value_candidates or x_col not in df.columns:
+        raise ValueError("Treemap needs a label column and a value column.")
+    value_col = value_candidates[-1]
+    # A repeated X column is the group (All Opioids, …), not the leaf label.
+    label_col = x_col
+    parent_col = None
+    others = [col for col in df.columns if col not in {x_col, value_col}]
+    if others:
+        other = others[0]
+        x_repeats = df[x_col].astype(str).nunique() < len(df)
+        other_repeats = df[other].astype(str).nunique() < len(df)
+        if x_repeats and not other_repeats:
+            parent_col = x_col
+            label_col = other
+        else:
+            parent_col = other
+
+    plot_df = df[[c for c in [parent_col, label_col, value_col] if c]].copy()
+    plot_df[value_col] = pd.to_numeric(plot_df[value_col], errors="coerce")
+    plot_df = plot_df.dropna(subset=[label_col, value_col])
+    if plot_df.empty:
+        raise ValueError("Treemap has no numeric values.")
+
+    ids: list[str] = []
+    labels: list[str] = []
+    parents: list[str] = []
+    values: list[float] = []
+    texts: list[str] = []
+    colors: list[str] = []
+    palette = palette or CHA_COLOR_PALETTE
+
+    if parent_col:
+        parent_names = list(dict.fromkeys(plot_df[parent_col].astype(str)))
+        parent_color = {
+            name: _TREEMAP_GROUP_COLORS.get(name.strip().lower(), palette[i % len(palette)])
+            for i, name in enumerate(parent_names)
+        }
+        parent_totals = {
+            name: float(plot_df.loc[plot_df[parent_col].astype(str) == name, value_col].sum())
+            for name in parent_names
+        }
+        for name in parent_names:
+            ids.append(name)
+            labels.append(name)
+            parents.append("")
+            # branchvalues="total": parent value is the sum of its leaves.
+            values.append(parent_totals[name])
+            texts.append(name if show_data_labels else "")
+            colors.append(parent_color[name])
+        for row in plot_df.itertuples(index=False):
+            parent = str(row[0])
+            label = str(row[1])
+            value = float(row[2])
+            ids.append(f"{parent}::{label}")
+            labels.append(label)
+            parents.append(parent)
+            values.append(value)
+            texts.append(_treemap_leaf_text(label, value) if show_data_labels else "")
+            colors.append(parent_color[parent])
+    else:
+        for i, row in enumerate(plot_df.itertuples(index=False)):
+            label = str(row[0])
+            value = float(row[1])
+            ids.append(label)
+            labels.append(label)
+            parents.append("")
+            values.append(value)
+            texts.append(_treemap_leaf_text(label, value) if show_data_labels else "")
+            colors.append(palette[i % len(palette)])
+
+    fig = go.Figure(
+        data=[
+            go.Treemap(
+                ids=ids,
+                labels=labels,
+                parents=parents,
+                values=values,
+                text=texts,
+                textinfo="text",
+                textposition="middle center",
+                branchvalues="total",
+                tiling=dict(packing="squarify", pad=2),
+                marker=dict(
+                    colors=colors,
+                    line=dict(color="white", width=2),
+                    pad=dict(t=28, l=4, r=4, b=4),
+                ),
+                textfont=dict(size=15, family=font_family, color="#1a1a1a"),
+                hovertemplate="<b>%{label}</b><br>%{value:,.0f}<extra></extra>",
+                pathbar=dict(visible=False),
+            )
+        ]
+    )
+    fig.update_layout(
+        paper_bgcolor="white",
+        plot_bgcolor="white",
+        width=width,
+        height=height,
+        margin=dict(l=8, r=8, t=8, b=8),
+        font=dict(family=font_family, color="#1a1a1a"),
+        uniformtext=dict(minsize=10, mode="show"),
+    )
     return fig
 
 

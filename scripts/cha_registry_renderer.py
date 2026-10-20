@@ -24,6 +24,7 @@ from scripts.cha_figure_builder import (
     build_pie_figure,
     build_simple_bar_figure,
     build_stacked_bar_figure,
+    build_treemap_figure,
 )
 from scripts.cha_table_styling import (
     CHA_REGION_ALIASES,
@@ -584,6 +585,13 @@ def render_figure_object(
 
     df.columns = [_strip_format_tokens_from_label(col) for col in df.columns]
     df.columns = _ensure_unique_column_labels(list(df.columns))
+    if spec.figure_type == "treemap":
+        # Hierarchy is Category | Drug | count. Do not pivot it.
+        label_col = spec.x_col if spec.x_col in df.columns else ""
+        if not label_col:
+            label_col = df.columns[1] if len(df.columns) > 2 else df.columns[0]
+        value_cols = [col for col in spec.y_cols if col in df.columns and col != label_col]
+        return build_treemap_figure(df, x_col=label_col, y_cols=value_cols or None)
     first_col = df.columns[0]
     first_col_is_time_like = _is_time_like_column(df[first_col])
 
