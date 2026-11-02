@@ -228,35 +228,5 @@
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Appendix</span>"
     ]
-  },
-  {
-    "objectID": "chapters/99-example-data-objects.html",
-    "href": "chapters/99-example-data-objects.html",
-    "title": "9  Appendix: Live Data Objects Example",
-    "section": "",
-    "text": "9.1 How this works\nThe figure and table below are not hand-written. They come from data/raw/workbook.xlsx, which uses the same format as the Mid-Hudson CHA workbook:\nOn every quarto render, the pre-render hook in _quarto.yml runs scripts/generate_chapter_objects.py, which reads the indicator sheets and writes one include file per object into chapters/_generated/objects/. This chapter pulls them in.\nThe Poverty Rate sheet is a figure (Figure 9.1); the Total Households sheet is a table (Table 9.1).\nFigure 9.1: Percentage of Population Below Poverty Level\nTable 9.1: Total Households\n\n\n\n\n\n\n\n\n\n\n\nTable 'tbl-poverty-pop' not found in workbook.",
-    "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Appendix: Live Data Objects Example</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/99-example-data-objects.html#how-this-works",
-    "href": "chapters/99-example-data-objects.html#how-this-works",
-    "title": "9  Appendix: Live Data Objects Example",
-    "section": "",
-    "text": "A Master sheet - the roster of every indicator (Activate/Deactivate, Object_Type, Indicator Name, Object ID, Figure ID, data source).\nA Dropdowns sheet - reference lists for the data-entry dropdowns (format codes, y-labels, sources, dates, …).\nOne sheet per indicator with a config block in columns A/B (Name, Table/Figure/Both, Object ID, Figure Type, X Column, …) and the data entered to the right of the Enter Data cell.",
-    "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Appendix: Live Data Objects Example</span>"
-    ]
-  },
-  {
-    "objectID": "chapters/99-example-data-objects.html#to-add-your-own-indicator",
-    "href": "chapters/99-example-data-objects.html#to-add-your-own-indicator",
-    "title": "9  Appendix: Live Data Objects Example",
-    "section": "9.2 To add your own indicator",
-    "text": "9.2 To add your own indicator\n\nCopy an indicator sheet (Poverty Rate or Total Households).\nSet the config cells in column A/B - especially Name, Table/Figure/Both (figure or table), Object ID, and (for figures) Figure Type / X Column.\nFill the data to the right of the Enter Data cell: the row-label column (col F) plus value columns, with per-column format codes in the row just above.\nAdd the indicator to the Master roster (optional, for tracking).\nReference it in any chapter with {{&lt; include _generated/objects/&lt;object_id&gt;.qmd &gt;}} (e.g. fig-&lt;id&gt; or tbl-&lt;id&gt;), run the generator once, then quarto render.\n\nSee scripts/WORKBOOK_SCHEMA.md and scripts/PIPELINE_USAGE.md for full details.",
-    "crumbs": [
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Appendix: Live Data Objects Example</span>"
-    ]
   }
 ]

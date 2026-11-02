@@ -11,7 +11,7 @@ REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 
 exec python3 "${REPO_ROOT}/scripts/generate_chapter_objects.py" \
   --workbook "${REPO_ROOT}/data/raw/workbook.xlsx" \
-  --chapter "${REPO_ROOT}/chapters/99-example-data-objects.qmd" \
+  --chapter "${REPO_ROOT}/chapters/05-data.qmd" \
   --output-dir "${REPO_ROOT}/chapters/_generated/objects" \
   --include-source true \
   --validate-all-chapters \
