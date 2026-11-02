@@ -1,0 +1,12 @@
+<!-- indicator: fig-12 -->
+
+```{python}
+#| echo: false
+#| warning: false
+#| message: false
+#| label: fig-12
+#| fig-cap: 'Appendix A - Drug Classification List (Opioid Classification)'
+#| fig-alt: 'Data visualization showing Appendix A - Drug Classification List (Opioid Classification).'
+from scripts.cha_registry_renderer import render_figure_object
+render_figure_object(figure_id="fig-12", workbook_path=CHA_WORKBOOK_PATH).show()
+```

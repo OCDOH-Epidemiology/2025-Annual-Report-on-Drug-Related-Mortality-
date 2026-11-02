@@ -27,6 +27,7 @@ book:
     - chapters/04-definitions.qmd
     - chapters/05-data.qmd
     - chapters/06-Current Substance Use Disorder and Overdose Prevention Efforts in Orange County.qmd
+    - chapters/07-appendix.qmd
     - chapters/99-example-data-objects.qmd
   sidebar:
     style: docked

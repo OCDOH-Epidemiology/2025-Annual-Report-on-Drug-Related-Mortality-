@@ -447,15 +447,32 @@ def _extract_data_block_styles(
     n_rows: int,
     n_cols: int,
 ) -> tuple[tuple[CellStyle, ...], ...]:
-    """Build a style grid aligned with parsed data_df rows and columns."""
+    """Build a style grid aligned with parsed data_df rows and columns.
+
+    A single blank data row is a section gap (see the data-row loop). Two
+    blanks end the block, matching `_flat_grid_stop_row`.
+    """
     styles: list[tuple[CellStyle, ...]] = []
-    for row_offset in range(n_rows):
-        row_1based = data_start_idx + row_offset + 1
-        row_styles: list[CellStyle] = []
-        for col_offset in range(n_cols):
-            col_1based = data_col_start_idx + col_offset + 1
-            row_styles.append(_read_cell_style(ws, row_1based, col_1based))
+    blank_streak = 0
+    row_1based = data_start_idx + 1
+    while len(styles) < n_rows and row_1based <= ws.max_row:
+        row_vals = [
+            _resolved_worksheet_value(ws, row_1based, data_col_start_idx + col_offset + 1)
+            for col_offset in range(n_cols)
+        ]
+        if all(_as_text(value) == "" for value in row_vals):
+            blank_streak += 1
+            row_1based += 1
+            if blank_streak >= 2:
+                break
+            continue
+        blank_streak = 0
+        row_styles = [
+            _read_cell_style(ws, row_1based, data_col_start_idx + col_offset + 1)
+            for col_offset in range(n_cols)
+        ]
         styles.append(tuple(row_styles))
+        row_1based += 1
     return tuple(styles)
 
 
@@ -825,14 +842,20 @@ def _parse_flat_indicator_sheet(
         return text
 
     data_rows: list[list[Any]] = []
+    blank_streak = 0
+    n_cols = len(headers)
     for i in range(data_start_idx, len(df)):
-        row_label = df.iloc[i, data_col_start_idx]
-        if row_label is None or (isinstance(row_label, float) and pd.isna(row_label)) or _as_text(row_label) == "":
-            break
         row_values = [
             df.iloc[i, j] if j < df.shape[1] else None
-            for j in range(data_col_start_idx, data_col_start_idx + len(headers))
+            for j in range(data_col_start_idx, data_col_start_idx + n_cols)
         ]
+        # One blank row separates sections (alcohol / benzodiazepines). Two end the block.
+        if all(_as_text(value) == "" for value in row_values):
+            blank_streak += 1
+            if blank_streak >= 2:
+                break
+            continue
+        blank_streak = 0
         data_rows.append(row_values)
 
     data_df = pd.DataFrame(data_rows, columns=headers) if data_rows else pd.DataFrame(columns=headers)

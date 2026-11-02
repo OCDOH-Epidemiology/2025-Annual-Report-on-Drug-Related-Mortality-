@@ -1,0 +1,36 @@
+---
+title: "Appendix"
+jupyter: python3
+execute:
+  freeze: false
+---
+
+```{python}
+#| echo: false
+#| warning: false
+#| message: false
+import sys
+from pathlib import Path
+
+cwd = Path.cwd()
+project_root = cwd if (cwd / "scripts").exists() else cwd.parent
+if str(project_root) not in sys.path:
+    sys.path.insert(0, str(project_root))
+
+CHA_WORKBOOK_PATH = project_root / "data" / "raw" / "workbook.xlsx"
+```
+
+# Appendix A: Drug Classification Methodology and Compound Listings
+
+The following lists detail the specific drug compounds included within each drug classification group created for this report. These compounds were identified during post-mortem toxicology testing and subsequently categorized into selective groups for data visualization. Of note, these lists serve as a comprehensive guide of potential drugs or metabolites and do not mean that every listed compound was detected in the cases analyzed for this report. 
+
+For the purpose of data visualization, specific metabolites produced by the body during drug metabolism are classified under their corresponding parent drug categories. For example, the metabolite cocaethylene is classified under both alcohol and cocaine. To ensure clarity, all figures are titled or noted to differentiate whether the data being presented are a count of a specific drug or a count of an aggregated drug classification.
+
+For this report, compounds were classified into four main groups: alcohol, benzodiazepines, opioids, and stimulants.
+
+{{< include _generated/objects/tbl-11.qmd >}}
+
+{{< include _generated/objects/tbl-12.qmd >}}
+
+{{< include _generated/objects/tbl-13.qmd >}}
+
